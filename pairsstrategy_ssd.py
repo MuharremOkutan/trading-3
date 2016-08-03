@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 """
 This module implements a pairs trading algorithm. The trading
-algrorithm is based on Sum of Squared Distance (SSD) method.
+algrorithm is based on Sum of Squared Distance (SSD) method. This
+algorithm was used to simulate an investment strategy, An example
+application of this algorithm can be found in this repository of by
+request.
 """
 import numpy as np
 import pandas as pd
