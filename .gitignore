@@ -1,0 +1,7 @@
+# Files ignored by git
+
+# Text files that may contain notes
+*.txt
+
+# Backup files created by tools e.g emacs
+*~
