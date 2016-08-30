@@ -74,14 +74,17 @@ double VanillaOption::calculatePutPrice() const{
 }
 
 double VanillaOption::cndf(const double &x) const{
-// TODO: complete implementation of statistics lib or implement here
-
+  const double l = 1.0 / (1.0 + 0.2316419*x);
+  const double l_sum = l * (0.319381530 + l*(-0.356563782 + l*(1.781477937 + 
+							       l*(-1.821255978 + 1.330274429*l))));
+  if( x >= 0.0){
+    return (1.0 - (1.0/(pow(2 * M_PI, 0.5))) *exp(-0.5*x*x) * l_sum);
+  }
+  else{
+    return 1.0 - cndf(-x);
+  }
 }
   
-string VanillaOption::optionState() const{
- // TODO:
-}
-
 void VanillaOption::initialize(){
   K = 500.0;	// strike price
   r = 0.02;	// 2% interest rate

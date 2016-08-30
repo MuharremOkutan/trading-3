@@ -24,13 +24,14 @@ class VanillaOption{
   double calculateCallPrice() const;
   double calculatePutPrice() const;
   double cndf(const double &x) const;
-  string optionState() const;			/* in/out/at the money */
+/*   string optionState() const;		        */
  private:
   double K;		/* strike price */
   double r;		/* risk-free rate */
   double T;		/* contract's maturity time */
   double S;		/* Underlying asset price */
   double sigma;		/* Volatility of underlying asset */
+/*   string state;		/\* in/out/at the money *\/ */
 
   void initialize();
   void copy(const VanillaOption &option);
